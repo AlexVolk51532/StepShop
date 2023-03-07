@@ -19,11 +19,8 @@
 
 
     <!-- Additional CSS Files -->
-<!--    <link rel="stylesheet" href="/static/assets/css/fontawesome.css">-->
     <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-<!--    <link rel="stylesheet" href="/static/assets/css/tooplate-main.css">-->
     <link rel="stylesheet" href="{% static 'assets/css/tooplate-main.css' %}">
-<!--    <link rel="stylesheet" href="/static/assets/css/owl.css">-->
     <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
     {% block css %}
     {% endblock %}
@@ -135,7 +132,7 @@ https://www.tooplate.com/view/2114-pixie
         <div class="row">
           <div class="col-md-12">
             <div class="copyright-text">
-              <p>Copyright &copy; 2019 Company Name
+              <p>Copyright &copy; {% now "Y" %} Company Name
 
                 - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
             </div>
