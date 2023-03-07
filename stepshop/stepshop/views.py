@@ -46,3 +46,13 @@ def products(request):
     }
 
     return render(request, 'products.html', context)
+
+def product(request):
+    title = "товар"
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
+
+    return render(request, 'product.html', context)
