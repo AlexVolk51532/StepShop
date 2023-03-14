@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from mainapp.models import ProductCategory, Product
+
 links_menu = [
         {'href' : 'index', 'name': 'Главная', 'route': ''},
         {'href' : 'products:index', 'name': 'Продукт', 'route': 'products/'},
@@ -10,9 +12,14 @@ links_menu = [
 def index(request):
     title = "Главная"
 
+    products = Product.objects.all()[:2]
+    categories = ProductCategory.objects.all()
+
     context = {
         'title': title,
         'links_menu': links_menu,
+        'products': products,
+        'categories': categories,
     }
 
     return render(request, 'index.html', context)
