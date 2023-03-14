@@ -1,0 +1,32 @@
+[
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Бобер обыкновенный",
+      "image": "product_images/Бобер.jpg",
+      "short_desc": "",
+      "price": "5000.00",
+      "quantity": 8,
+      "created_at": "2023-03-07T15:30:48.601Z",
+      "updated_at": "2023-03-09T14:05:08.356Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "category": 3,
+      "name": "Красные кеды",
+      "image": "product_images/красные_кеды_3yvsymy.jpg",
+      "short_desc": "Очень красные",
+      "price": "125.25",
+      "quantity": 5,
+      "created_at": "2023-03-09T13:44:10.253Z",
+      "updated_at": "2023-03-09T14:10:01.330Z",
+      "description": ""
+    }
+  }
+]
