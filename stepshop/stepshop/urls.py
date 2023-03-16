@@ -27,7 +27,7 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('product/', product, name='product'),
     path('products/', include('mainapp.urls', namespace='products')),
-    # path('auth/', include('authapp.urls', namespace='auth')),
+    path('auth/', include('authapp.urls', namespace='auth')),
 ]
 
 if settings.DEBUG:
