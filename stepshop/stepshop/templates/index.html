@@ -35,9 +35,9 @@
 <div class="featured-items">
     <div class="container">
         <div class="row">
-            {% for product in products %}
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
+                    {% for product in products %}
                     <a href="single-product.html">
                         <div class="featured-item">
                             <img src="{% if product.image %}{{ product.image.url }}{% endif %}"
@@ -46,6 +46,7 @@
                             <h6>${{ product.price }}</h6>
                         </div>
                     </a>
+                    {% endfor %}
                     <!--              <a href="single-product.html">-->
                     <!--                <div class="featured-item">-->
                     <!--                  <img src="{% static 'assets/images/item-02.jpg' %}" alt="Item 2">-->
@@ -104,7 +105,6 @@
                     <!--              </a>-->
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
 </div>
