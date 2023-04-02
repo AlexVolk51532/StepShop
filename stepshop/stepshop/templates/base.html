@@ -40,23 +40,29 @@
             <div class="col-md-12 d-flex justify-content-end align-items-center text-light">
 
                 {% if user.is_authenticated %}
-                   {% if user.is_superuser %}
-                      <a href="/admin/" class="nav-link">
-                          <span>Админка</span>
-                      </a>
-                   |
-                   {% endif %}
-                      <a href="{% url 'auth:edit' %}" class="nav-link">
-                          <span>{{ user.first_name|default:'Пользователь' }}</span>
-                      </a>
-                   |
-                      <a href="{% url 'auth:logout' %}" class="nav-link">
-                          <span>Выйти</span>
-                      </a>
+                {% if user.is_superuser %}
+                <a href="/admin/" class="nav-link">
+                    <span>Админка</span>
+                </a>
+                |
+                {% endif %}
+                <a href="{% url 'auth:edit' %}" class="nav-link">
+                    <span>{{ user.first_name|default:'Пользователь' }}</span>
+                </a>
+                |
+                <a href="{% url 'auth:logout' %}" class="nav-link">
+                    <span>Выйти</span>
+                </a>
                 {% else %}
-                      <a href="{% url 'auth:login' %}" class="nav-link">
-                          <span>Войти</span>
-                      </a>
+                <a href="{% url 'auth:login' %}" class="nav-link">
+                    <span>Войти</span>
+                </a>
+                {% endif %}
+                |
+                {% if basket %}
+                <a href="{#% url 'basket:view %#}" class="basket">
+                    <span>{{ basket|length }}</span>
+                </a>
                 {% endif %}
 
             </div>
@@ -184,6 +190,7 @@
           t.style.color='#fff';
           }
       }
+
 
 </script>
 

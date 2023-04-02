@@ -3,16 +3,16 @@ from django.shortcuts import render
 from mainapp.models import ProductCategory, Product
 
 links_menu = [
-        {'href' : 'index', 'name': 'Главная', 'route': ''},
-        {'href' : 'products:index', 'name': 'Продукт', 'route': 'products/'},
-        {'href' : 'about', 'name': 'О нас', 'route': 'about/'},
-        {'href' : 'contacts', 'name': 'Контакты', 'route': 'contacts/'},
+        {'href': 'index', 'name': 'Главная', 'route': ''},
+        {'href': 'products:index', 'name': 'Продукт', 'route': 'products/'},
+        {'href': 'about', 'name': 'О нас', 'route': 'about/'},
+        {'href': 'contacts', 'name': 'Контакты', 'route': 'contacts/'},
     ]
 
 def index(request):
     title = "Главная"
 
-    products = Product.objects.all()[:2]
+    products = Product.objects.all()
     categories = ProductCategory.objects.all()
 
     context = {
