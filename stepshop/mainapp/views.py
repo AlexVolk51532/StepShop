@@ -12,7 +12,7 @@ links_menu = [
 def products(request):
     title = "продукты"
 
-    products = Product.objects.all()[:2]
+    products = Product.objects.all()
     categories = ProductCategory.objects.all()
 
     context = {
