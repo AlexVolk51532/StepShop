@@ -37,11 +37,17 @@ def product(request, pk):
     product_item = get_object_or_404(Product, pk=pk)
     category = product_item.category
 
+    basket = []
+
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+
     context = {
         'title': title,
         'links_menu': links_menu,
         'product': product_item,
         'category': category,
+        'basket': basket,
     }
 
     return render(request, 'product.html', context)

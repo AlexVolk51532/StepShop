@@ -32,4 +32,7 @@ def basket_add(request, pk):
 
 
 def basket_remove(request, pk):
-    return render(request, 'basket/basket.html')
+    basket_record = get_object_or_404(Basket, pk=pk)
+    basket_record.delete()
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

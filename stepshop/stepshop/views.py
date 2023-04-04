@@ -63,3 +63,13 @@ def product(request):
     }
 
     return render(request, 'product.html', context)
+
+def basket(request):
+    title = "корзина"
+
+    context = {
+        'title': title,
+        'links_menu': links_menu,
+    }
+
+    return render(request, 'product.html', context)
