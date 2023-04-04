@@ -7,7 +7,7 @@ from mainapp.models import Product
 
 def basket(request):
     if request.user.is_authenticated:
-        basket = Basket.object.filter(user=request.user)
+        basket = Basket.objects.filter(user=request.user)
 
         context = {
             'basket': basket,

@@ -26,6 +26,7 @@ def products(request):
         'links_menu': links_menu,
         'products': products,
         'categories': categories,
+        'basket': basket,
     }
 
     return render(request, 'products.html', context)
