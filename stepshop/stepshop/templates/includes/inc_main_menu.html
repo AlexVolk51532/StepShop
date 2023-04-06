@@ -16,7 +16,7 @@
                 <li class="nav-item
                  {% if request.resolver_match.route == item.route %}
                    active
-                 {%endif %}">
+                 {% endif %}">
                     <a class="nav-link" href="{% url item.href %}">{{ item.name }}</a>
                     {% if request.resolver_math.route == item.route %}
                     <span class="sr-only">(current)</span>
