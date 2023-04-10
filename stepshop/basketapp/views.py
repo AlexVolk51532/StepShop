@@ -4,6 +4,13 @@ from django.http import HttpResponseRedirect
 from basketapp.models import Basket
 from mainapp.models import Product
 
+links_menu = [
+    {'href': 'index', 'name': 'Главная', 'route': ''},
+    {'href': 'products:index', 'name': 'Продукты', 'route': 'products/'},
+    {'href': 'about', 'name': 'О нас', 'route': 'about/'},
+    {'href': 'contacts', 'name': 'Контакты', 'route': 'contacts/'},
+]
+
 
 def basket(request):
     if request.user.is_authenticated:
@@ -11,6 +18,7 @@ def basket(request):
 
         context = {
             'basket': basket,
+            'links_menu': links_menu,
         }
 
         return render(request, 'basket/basket.html', context)

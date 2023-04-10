@@ -5,7 +5,7 @@ from mainapp.models import Product, ProductCategory
 
 links_menu = [
         {'href': 'index', 'name': 'Главная'},
-        {'href': 'products:index', 'name': 'Продукт'},
+        {'href': 'products:index', 'name': 'Продукт', 'route': 'products/'},
         {'href': 'about', 'name': 'О нас'},
         {'href': 'contacts', 'name': 'Контакты'},
     ]
