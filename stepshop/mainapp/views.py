@@ -64,10 +64,7 @@ def product(request, pk):
     product_item = get_object_or_404(Product, pk=pk)
     category = product_item.category
 
-    basket = []
-
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    basket = get_basket(request.user)
 
     same_products = get_same_products(product_item)
 
