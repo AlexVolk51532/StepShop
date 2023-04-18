@@ -41,7 +41,7 @@
 
                 {% if user.is_authenticated %}
                 {% if user.is_superuser %}
-                <a href="/admin/" class="nav-link">
+                <a href="{% url 'admin_staff:users' %}" class="nav-link">
                     <span>Админка</span>
                 </a>
                 |
