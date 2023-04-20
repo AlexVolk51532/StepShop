@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load my_tags %}
 
 {% block title %}{{ title|title }}{% endblock %}
 
@@ -19,12 +20,12 @@
           <div class="col-md-6">
             <div class="product-slider">
               <div id="slider" class="flexslider">
-                {% if product.image %}
-                 <img src="{{ product.image.url }}"
+
+                 <img src="{{ product.image|media_folder_products }}"
                       alt="{{ product.name }}"
                       title="{{ product.name }}"
                       class="img-fluid">
-                {% endif %}
+
               </div>
             </div>
           </div>
@@ -67,11 +68,11 @@
               {% for product in same_products %}
               <a href="{% url 'products:product' product.pk %}">
                 <div class="featured-item">
-                  {% if product.image %}
-                  <img src="{{ product.image.url }}"
+
+                  <img src="{{ product.image|media_folder_products }}"
                       alt="{{ product.name }}"
                       title="{{ product.name }}">
-                  {% endif %}
+                  
                   <h4>{{ product.name }}</h4>
                   <h6>${{ product.price }}</h6>
                 </div>

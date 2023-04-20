@@ -1,45 +1,61 @@
 from django.contrib.auth.decorators import user_passes_test
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.views.generic import ListView, CreateView
 
 from authapp.forms import ShopUserRegisterForm
 from authapp.models import ShopUser
 from mainapp.models import ProductCategory, Product
 
 
-@user_passes_test(lambda u: u.is_superuser)
-def users(request):
-    title = 'пользователь'
+class UsersListView(ListView):
+    model = ShopUser
+    template_name = 'admin_staff/users.html'
+    context_object_name = 'users_list'
+    paginate_by = 3
 
-    users_list = ShopUser.objects.all().order_by('-is_active', '-is_superuser', '-is_staff', 'username')
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(UsersListView, self).get_context_data()
+        # context['title'] = 'пользователь'
+        context.update({'title': 'пользователь'})
+        return context
 
-    context = {
-        'title': title,
-        'users_list': users_list
-    }
-
-    return render(request, 'admin_staff/users.html', context)
+    def get_queryset(self):
+        return ShopUser.objects.order_by('-is_active', '-is_superuser', '-is_staff', 'username')
 
 
-def user_create(request):
-    title = 'пользователь | создать'
+class UserCreateView(CreateView):
+    model = ShopUser
+    form_class = ShopUserRegisterForm
+    template_name = 'admin_staff/user_create.html'
+    success_url = reverse_lazy('admin_staff:users')
 
-    if request.method == 'POST':
-        user_form = ShopUserRegisterForm(request.POST, request.FILES)
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(UserCreateView, self).get_context_data()
+        # context['title'] = 'пользователь | создать'
+        context.update({'title': 'пользователь | создать'})
+        return context
 
-        if user_form.is_valid():
-            user_form.save()
-            return HttpResponseRedirect(reverse('admin_staff:users'))
-    else:
-        user_form = ShopUserRegisterForm()
 
-    context = {
-        'title': title,
-        'user_form': user_form
-    }
-
-    return render(request, 'admin_staff/user_create.html', context)
+# def user_create(request):
+#     title = 'пользователь | создать'
+#
+#     if request.method == 'POST':
+#         user_form = ShopUserRegisterForm(request.POST, request.FILES)
+#
+#         if user_form.is_valid():
+#             user_form.save()
+#             return HttpResponseRedirect(reverse('admin_staff:users'))
+#     else:
+#         user_form = ShopUserRegisterForm()
+#
+#     context = {
+#         'title': title,
+#         'user_form': user_form
+#     }
+#
+#     return render(request, 'admin_staff/user_create.html', context)
 
 
 def user_update(request, pk):
