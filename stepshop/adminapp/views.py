@@ -5,6 +5,7 @@ from django.urls import reverse
 
 from authapp.forms import ShopUserRegisterForm
 from authapp.models import ShopUser
+from mainapp.forms import ProductCategoryEditForm
 from mainapp.models import ProductCategory, Product
 
 
@@ -65,7 +66,23 @@ def categories(request):
 
 
 def category_create(request):
-    pass
+    title = 'категория | создать'
+
+    if request.method == 'POST':
+        category_form = ProductCategoryEditForm(request.POST)
+
+        if category_form.is_valid():
+            category_form.save()
+            return HttpResponseRedirect(reverse('admin_staff:categories'))
+    else:
+        category_form = ProductCategoryEditForm()
+
+    context = {
+        'title': title,
+        'category_form': category_form
+    }
+
+    return render(request, 'admin_staff/category_create.html', context)
 
 
 def category_update(request, pk):

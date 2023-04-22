@@ -31,7 +31,6 @@ class ShopUserRegisterForm(UserCreationForm):
             field.widget.attrs['class'] = 'form-control'
             field.help_text = ''
 
-
     def clean_age(self):
         data = self.cleaned_data['age']
 
