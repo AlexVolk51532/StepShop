@@ -34,13 +34,14 @@ class ProductListView(ListView):
     model = Product
     template_name = 'products.html'
     context_object_name = 'products'
-    paginate_by = 7
+    paginate_by = 6
 
     def get_queryset(self):
         pk = self.kwargs.get('pk')
         if pk is not None:
             if pk == 0:
                 products = Product.objects.all()
+                category = {'name': 'все'}
             else:
                 category = get_object_or_404(ProductCategory, pk=pk)
                 products = Product.objects.filter(category__pk=pk)
