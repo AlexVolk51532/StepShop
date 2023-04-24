@@ -40,7 +40,7 @@
                         <tbody>
                         {% for user in users_list %}
                             <tr {% if not user.is_active %} style="opacity: 0.5;" {% endif %}>
-                                <td><a href="{#% url 'admin_staff:user_update' user.id %#}"
+                                <td><a href="{% url 'admin_staff:user_update' user.id %}"
                                        style="color: dodgerblue">{{ user.username }}</a></td>
                                 <td>{{ user.first_name }}</td>
                                 <td>{{ user.last_name }}</td>
@@ -62,7 +62,7 @@
                                 <td>{{ user.last_login }}</td>
                                 <td class="text-center">
                                     <a {% if not user.is_active %} class="invisible" {% endif %}
-                                       href="{#% url 'admin_staff:user_delete' pk=user.id %#}">
+                                       href="{% url 'admin_staff:user_delete' pk=user.id %}">
                                         <i class="fa fa-times-circle"></i>
                                     </a>
                                 </td>
@@ -76,8 +76,8 @@
                     <div class="pagination">
                         <span class="step-links">
                             {% if page_obj.has_previous %}
-                                <a href="?page=1">&laquo; первая</a>
-                                <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+                                <a href="?page=1">&laquo; первая </a>
+                                <a href="?page={{ page_obj.previous_page_number }}"> предыдущая </a>
                             {% endif %}
                         </span>
                         <span class="current">
@@ -87,8 +87,8 @@
                         </span>
                         <span class="step-links">
                             {% if page_obj.has_next %}
-                                <a href="?page={{ page_obj.next_page_number }}">следующая</a>
-                                <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+                                <a href="?page={{ page_obj.next_page_number }}"> следующая </a>
+                                <a href="?page={{ page_obj.paginator.num_pages }}"> последняя &raquo;</a>
                             {% endif %}
                         </span>
                     </div>

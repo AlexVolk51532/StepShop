@@ -1,0 +1,20 @@
+{% extends 'admin_staff/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title|capfirst }}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="mx-auto d-grid text-center">
+        <form action="{% url 'admin_staff:product_update' product.pk %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="text-center">
+                {{ form.as_p }}
+            </div>
+            <button class="btn btn-primary col-2" type="submit">Сохранить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

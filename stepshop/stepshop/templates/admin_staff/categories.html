@@ -30,18 +30,18 @@
                         <tbody>
                         {% for category in categories_list %}
                         <tr {% if not category.is_active %} style="opacity: 0.5;" {% endif %}>
-                            <td><a href="{#% url 'admin_staff:products' category.id %#}"
+                            <td><a href="{% url 'admin_staff:products' category.id %}"
                                    style="color: dodgerblue">{{ category.name }}</a>
                             </td>
                             <td class="text-center">
                                 <a {% if not category.is_active %} class="invisible" {% endif %}
-                                   href="{#% url 'admin_staff:category_update' pk=category.id %#}">
+                                   href="{% url 'admin_staff:category_update' pk=category.id %}">
                                     <i class="fa fa-edit"></i>
                                 </a>
                             </td>
                             <td class="text-center">
                                 <a {% if not category.is_active %} class="invisible" {% endif %}
-                                   href="{#% url 'admin_staff:category_delete' pk=category.id %#}">
+                                   href="{% url 'admin_staff:category_delete' pk=category.id %}">
                                     <i class="fa fa-times-circle"></i>
                                 </a>
                             </td>
@@ -49,6 +49,29 @@
                         {% endfor %}
                         </tbody>
                     </table>
+                    {% if page_obj.paginator %}
+                    {% if page_obj.paginator.num_pages > 1 %}
+                    <div class="pagination">
+                        <span class="step-links m-2">
+                            {% if page_obj.has_previous %}
+                                <a href="?page=1">&laquo; первая </a>
+                                <a href="?page={{ page_obj.previous_page_number }}"> предыдущая </a>
+                            {% endif %}
+                        </span>
+                        <span class="current">
+                            {% if page_obj.has_previous %}
+                                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+                            {% endif %}
+                        </span>
+                        <span class="step-links">
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}"> следующая </a>
+                                <a href="?page={{ page_obj.paginator.num_pages }}"> последняя &raquo;</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                    {% endif %}
+                    {% endif %}
                 </div>
             </div>
             <div class="card-footer">
