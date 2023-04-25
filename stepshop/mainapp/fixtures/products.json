@@ -9,9 +9,10 @@
       "short_desc": "",
       "price": "5000.00",
       "quantity": 8,
-      "created_at": "2023-03-07T15:30:48.601Z",
-      "updated_at": "2023-03-09T14:05:08.356Z",
-      "description": ""
+      "created_at": "2023-03-14T15:10:46.460Z",
+      "updated_at": "2023-04-16T13:58:46.726Z",
+      "description": "",
+      "is_active": true
     }
   },
   {
@@ -20,13 +21,222 @@
     "fields": {
       "category": 3,
       "name": "Красные кеды",
-      "image": "product_images/красные_кеды_3yvsymy.jpg",
+      "image": "product_images/красные_кеды.jpg",
       "short_desc": "Очень красные",
       "price": "125.25",
       "quantity": 5,
-      "created_at": "2023-03-09T13:44:10.253Z",
-      "updated_at": "2023-03-09T14:10:01.330Z",
-      "description": ""
+      "created_at": "2023-03-14T15:10:46.460Z",
+      "updated_at": "2023-04-16T13:58:29.769Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "category": 4,
+      "name": "Утконос американский",
+      "image": "product_images/Утконос.jpg",
+      "short_desc": "Не бобр и не утка, а утконос",
+      "price": "4500.00",
+      "quantity": 5,
+      "created_at": "2023-04-02T07:03:12.124Z",
+      "updated_at": "2023-04-10T04:38:39.807Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 4,
+    "fields": {
+      "category": 3,
+      "name": "Кеды синие",
+      "image": "product_images/кеды_синие.jpg",
+      "short_desc": "Кеды для тинейджеров",
+      "price": "144.00",
+      "quantity": 10,
+      "created_at": "2023-04-02T07:04:44.942Z",
+      "updated_at": "2023-04-10T04:38:25.421Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 5,
+    "fields": {
+      "category": 3,
+      "name": "Кеды Rieker",
+      "image": "product_images/кеды_Rieker.jpg",
+      "short_desc": "Кеды для комфорта",
+      "price": "223.00",
+      "quantity": 5,
+      "created_at": "2023-04-02T07:05:38.114Z",
+      "updated_at": "2023-04-10T04:38:11.677Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 6,
+    "fields": {
+      "category": 5,
+      "name": "Джинсы темно-синие",
+      "image": "product_images/джинсы_темно_синие.jpg",
+      "short_desc": "Для брутальных мужчин",
+      "price": "300.00",
+      "quantity": 20,
+      "created_at": "2023-04-02T07:06:54.904Z",
+      "updated_at": "2023-04-10T04:37:58.326Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 7,
+    "fields": {
+      "category": 5,
+      "name": "Джинсы черные",
+      "image": "product_images/джинсы_черные.jpg",
+      "short_desc": "Ничем не отличаются от темно-синих",
+      "price": "300.00",
+      "quantity": 15,
+      "created_at": "2023-04-02T07:07:47.166Z",
+      "updated_at": "2023-04-10T04:37:27.196Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 8,
+    "fields": {
+      "category": 5,
+      "name": "Джинсы",
+      "image": "product_images/джинсы_0bKznXU.jpeg",
+      "short_desc": "Джинсы классические",
+      "price": "292.00",
+      "quantity": 20,
+      "created_at": "2023-04-02T07:10:55.956Z",
+      "updated_at": "2023-04-10T05:16:20.909Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 9,
+    "fields": {
+      "category": 4,
+      "name": "Утконос Европейский",
+      "image": "",
+      "short_desc": "Он не гей",
+      "price": "5000.00",
+      "quantity": 10,
+      "created_at": "2023-04-20T14:52:16.043Z",
+      "updated_at": "2023-04-25T14:38:25.482Z",
+      "description": "",
+      "is_active": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 10,
+    "fields": {
+      "category": 6,
+      "name": "Брендовые модные мужские шорты",
+      "image": "product_images/Брендовые_модные_мужские_шорты.jpg",
+      "short_desc": "",
+      "price": "200.00",
+      "quantity": 4,
+      "created_at": "2023-04-24T14:27:26.384Z",
+      "updated_at": "2023-04-24T14:27:26.384Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 11,
+    "fields": {
+      "category": 6,
+      "name": "Шорты Ayris Silk из натурального шёлка",
+      "image": "product_images/Шорты_Ayris_Silk_из_натурального_шёлка.jpg",
+      "short_desc": "",
+      "price": "199.00",
+      "quantity": 8,
+      "created_at": "2023-04-24T14:28:02.685Z",
+      "updated_at": "2023-04-24T14:28:02.685Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 12,
+    "fields": {
+      "category": 6,
+      "name": "Шорты Jordan x Travis Scott Men's Shorts",
+      "image": "product_images/Шорты_Jordan_x_Travis_Scott_Mens_Shorts.jpg",
+      "short_desc": "",
+      "price": "219.00",
+      "quantity": 12,
+      "created_at": "2023-04-24T14:28:43.038Z",
+      "updated_at": "2023-04-24T14:28:43.038Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 13,
+    "fields": {
+      "category": 6,
+      "name": "Шорты черные с лампасами",
+      "image": "product_images/Шорты_черные_с_лампасами.jpg",
+      "short_desc": "",
+      "price": "169.00",
+      "quantity": 15,
+      "created_at": "2023-04-24T14:29:14.014Z",
+      "updated_at": "2023-04-24T14:29:14.014Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 14,
+    "fields": {
+      "category": 1,
+      "name": "Речной бобр",
+      "image": "product_images/Речной_бобр.jpg",
+      "short_desc": "",
+      "price": "4500.00",
+      "quantity": 5,
+      "created_at": "2023-04-24T14:31:20.365Z",
+      "updated_at": "2023-04-24T14:31:20.365Z",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 15,
+    "fields": {
+      "category": 1,
+      "name": "Бобр русский",
+      "image": "product_images/Бобр_русский.jpg",
+      "short_desc": "",
+      "price": "6000.00",
+      "quantity": 2,
+      "created_at": "2023-04-24T14:32:46.332Z",
+      "updated_at": "2023-04-24T14:32:46.332Z",
+      "description": "",
+      "is_active": true
     }
   }
 ]

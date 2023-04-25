@@ -4,7 +4,8 @@
     "pk": 1,
     "fields": {
       "name": "Бобры",
-      "description": "строители счастья"
+      "description": "строители счастья",
+      "is_active": true
     }
   },
   {
@@ -12,7 +13,44 @@
     "pk": 3,
     "fields": {
       "name": "Кеды",
-      "description": "Наши кеды теперь пахнут"
+      "description": "Наши кеды теперь пахнут",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Утконос",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Джинсы мужские",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 6,
+    "fields": {
+      "name": "Шорты",
+      "description": "Шорты для лета",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 7,
+    "fields": {
+      "name": "ffe",
+      "description": "erfrref",
+      "is_active": false
     }
   }
 ]
