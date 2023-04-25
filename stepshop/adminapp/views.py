@@ -66,7 +66,7 @@ class CategoriesListView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CategoriesListView, self).get_context_data()
-        context.update({'title': 'categories'})
+        context.update({'title': 'категория'})
         return context
 
     def get_queryset(self):
@@ -82,7 +82,7 @@ class CategoryCreateView(CreateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CategoryCreateView, self).get_context_data()
-        context.update({'title': 'category | create'})
+        context.update({'title': 'категория | создать'})
         return context
 
 
@@ -121,7 +121,7 @@ class ProductsListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'products'
+        context['title'] = 'продукты'
         context['category'] = get_object_or_404(ProductCategory, pk=self.kwargs.get('pk'))
         return context
 
@@ -134,7 +134,7 @@ class ProductCreateView(CreateView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductCreateView, self).get_context_data()
         context['category'] = get_object_or_404(ProductCategory, pk=self.kwargs.get('pk'))
-        context.update({'title': 'product | create'})
+        context.update({'title': 'продукт | создать'})
         return context
 
     def get_success_url(self):
@@ -148,7 +148,7 @@ class ProductReadView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'product | detail'
+        context['title'] = 'продукт | детали'
         return context
 
 
